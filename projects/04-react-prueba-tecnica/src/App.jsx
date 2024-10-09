@@ -16,7 +16,12 @@ export function App () {
       <button onClick={handleClick}>Get new fact</button>
       <section>
         {fact && <p>{fact}</p>}
-        {imageUrl && <img src={imageUrl} alt={`Image extracted using the first three words of "${fact}"`} />}
+        {imageUrl && (
+          <img
+            src={imageUrl}
+            alt={`Image extracted using the first three words of "${fact}"`}
+          />
+        )}
       </section>
     </main>
   )

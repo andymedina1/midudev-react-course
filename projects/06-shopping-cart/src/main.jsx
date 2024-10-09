@@ -6,10 +6,8 @@ import { FiltersProvider } from './context/filtersProvider.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-
     <FiltersProvider>
       <App />
     </FiltersProvider>
-
   </StrictMode>
 )

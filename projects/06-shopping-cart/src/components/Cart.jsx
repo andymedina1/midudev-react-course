@@ -11,9 +11,7 @@ function CartItem ({ thumbnail, price, title, quantity, addToCart }) {
         <strong>{title}</strong> - {price}
       </div>
       <footer>
-        <small>
-          Qty: {quantity}
-        </small>
+        <small>Qty: {quantity}</small>
         <button onClick={addToCart}>+</button>
       </footer>
     </li>
@@ -34,15 +32,18 @@ export function Cart () {
 
       <aside className='cart'>
         <ul>
-          {cart.map(product => (
-            <CartItem key={product.id} addToCart={() => addToCart(product)} {...product} />
+          {cart.map((product) => (
+            <CartItem
+              key={product.id}
+              addToCart={() => addToCart(product)}
+              {...product}
+            />
           ))}
         </ul>
         <button onClick={clearCart}>
           <ClearCartIcon />
         </button>
       </aside>
-
     </>
   )
 }

@@ -15,8 +15,8 @@ export function useCatImage ({ fact }) {
     setImageUrl('')
 
     fetch(`${CAT_IMAGE_PREFIX}${imageEnd}&json=true`)
-      .then(res => res.json())
-      .then(json => {
+      .then((res) => res.json())
+      .then((json) => {
         const { _id: id } = json
         setImageUrl(`${CAT_IMAGE_PREFIX}/${id}${imageEnd}`)
       })

@@ -9,14 +9,14 @@ export function Filters () {
   const { filters, setFilters } = useContext(FiltersContext)
 
   const handleChangeMinPrice = (event) => {
-    setFilters(prevState => ({
+    setFilters((prevState) => ({
       ...prevState,
       minPrice: event.target.value
     }))
   }
 
   const handleChangeCategory = (event) => {
-    setFilters(prevState => ({
+    setFilters((prevState) => ({
       ...prevState,
       category: event.target.value
     }))
@@ -26,7 +26,13 @@ export function Filters () {
     <section className='filters'>
       <div>
         <label htmlFor={minPriceFilterId}>Precio mínimo</label>
-        <input type='range' id={minPriceFilterId} min='0' max='1000' onChange={handleChangeMinPrice} />
+        <input
+          type='range'
+          id={minPriceFilterId}
+          min='0'
+          max='1000'
+          onChange={handleChangeMinPrice}
+        />
         <span>${filters.minPrice}</span>
       </div>
 
@@ -38,7 +44,6 @@ export function Filters () {
           <option value='smartphones'>Celulares</option>
         </select>
       </div>
-
     </section>
   )
 }
